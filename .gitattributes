@@ -11,8 +11,7 @@
 # Note: This is only used by command line
 ###############################################################################
 #*.cs     diff=csharp
-$ cat .gitattributes
-*.rb linguist-language=csharp
+#*.rb linguist-language=csharp
 ###############################################################################
 # Set the merge driver for project and solution files
 #
