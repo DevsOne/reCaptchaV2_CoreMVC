@@ -1,0 +1,27 @@
+﻿<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
+
+<script type="text/javascript">
+    var onloadCallback = function () {
+        grecaptcha.render('captcha3', {
+            'sitekey': '6LdfGyATAAAAADvIdChf1NZ_6fsUfaRqVgx77W7f'
+        });
+    };
+</script>
+
+<form asp-action="ValidateReCaptcha" asp-controller="Home" method="post">
+    <div id="captcha3"></div>
+    <input type="submit" class="btn btn-default" value="Register" />
+    @Html.ValidationSummary("")
+</form>
+
+
+<hr />
+<div id="reCaptchaAjax"></div>
+
+@section Scripts{
+    <script>
+        $("#reCaptchaAjax").load("/Home/AjaxRCPartial");
+    </script>
+}

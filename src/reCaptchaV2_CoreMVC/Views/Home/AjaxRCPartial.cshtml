@@ -1,0 +1,45 @@
+﻿<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
+
+
+<script type="text/javascript">
+    var onloadCallback = function () {
+        grecaptcha.render('captcha4', {
+            'sitekey': '6LdfGyATAAAAADvIdChf1NZ_6fsUfaRqVgx77W7f'
+        });
+
+        grecaptcha.render('captcha1', {
+            'sitekey': '6LdfGyATAAAAADvIdChf1NZ_6fsUfaRqVgx77W7f'
+        });
+
+        grecaptcha.render('captcha2', {
+            'sitekey': '6LdfGyATAAAAADvIdChf1NZ_6fsUfaRqVgx77W7f'
+        });
+
+    };
+</script>
+
+<form asp-action="ValidateReCaptcha" asp-controller="Home" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#reCaptchaAjax" asp-route-captcha="rc1">
+
+    <div id="captcha1"></div>
+    <input type="submit" class="btn btn-default" value="Register" />
+    @if (ViewBag.rc1 != null)
+    { <p>@ViewBag.rc1</p> }
+
+</form>
+
+
+<hr />
+
+<form asp-action="ValidateReCaptcha" asp-controller="Home" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#reCaptchaAjax" asp-route-captcha="rc2">
+
+    <div id="captcha2"></div>
+    <input type="submit" class="btn btn-default" value="Register" />
+    @if (ViewBag.rc2 != null)
+    { <p>@ViewBag.rc2</p> }
+
+</form>
+
+
+<div id="captcha4" hidden></div>

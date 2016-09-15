@@ -1,0 +1,14 @@
+﻿<a href="@Url.Action("AjaxRecaptcha","Home")">AjaxRecaptcha</a><br />
+<a href="@Url.Action("TwoViews","Home")">TwoViews</a>
+
+<hr />
+
+<form asp-action="ValidateReCaptcha" asp-controller="Home" method="post">
+    <div class="g-recaptcha" data-sitekey="6LdfGyATAAAAADvIdChf1NZ_6fsUfaRqVgx77W7f"></div>
+    <input type="submit" class="btn btn-default" value="Register" />
+    @Html.ValidationSummary("")
+</form>
+
+@section Scripts {
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+}
